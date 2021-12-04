@@ -1,10 +1,13 @@
 import importlib.metadata
+
 from fastapi import FastAPI
+
+from src import PACKAGE_VERSION
 
 app = FastAPI(
     title="Dumb service",
     description="Its all about upgrade version",
-    version="0.0.1",
+    version=PACKAGE_VERSION,
     docs_url="/swagger",
     redoc_url=None
 )
@@ -16,5 +19,5 @@ def get_index():
 @app.get("/version")
 def get_version():
     package_version = importlib.metadata.version('auto-bump-version')
-    return {"version": package_version}
+    return {"version": PACKAGE_VERSION}
 
