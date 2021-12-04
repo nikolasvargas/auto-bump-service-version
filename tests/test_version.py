@@ -2,7 +2,7 @@ from setuptools.config import read_configuration
 
 from fastapi.testclient import TestClient
 
-from src.main import app
+from autobump.main import app
 
 client = TestClient(app)
 

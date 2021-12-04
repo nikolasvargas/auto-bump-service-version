@@ -2,7 +2,7 @@ import importlib.metadata
 
 from fastapi import FastAPI
 
-from src import PACKAGE_VERSION
+from autobump import PACKAGE_VERSION
 
 app = FastAPI(
     title="Dumb service",
